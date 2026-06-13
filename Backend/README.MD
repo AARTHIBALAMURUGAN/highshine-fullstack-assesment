@@ -16,8 +16,8 @@ REST API for tracking and analyzing visitor events on highshine.in
 
 4. Create .env file :
    PORT=5000 || 3000
-   MONGO_URI=mongodb+srv://aarthib875:sri3107@cluster0.zaefnp5.mongodb.net/highshine?retryWrites=true&w=majority&appName=Cluster0
-   API_KEY=highshine_secret_key_123
+   MONGO_URI=//your mongodb  atlas uri//
+   API_KEY=your secret key
 
 5. Seed the database:
    npm run seed
