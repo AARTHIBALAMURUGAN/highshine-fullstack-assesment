@@ -9,18 +9,16 @@ import Navbar from './Components/Navbar';
 import Story from './Components/Story';
 import Timeline from './Components/Timeline';
 import Values from './Components/Values';
+import { initGA, trackPageView } from './analytics';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 const VISITOR_ID_KEY = 'highshine_visitor_id';
-
 
 const createUuid = () => {
   if (window.crypto?.randomUUID) {
     return window.crypto.randomUUID();
   }
-
   const template = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx';
-
   return template.replace(/[xy]/g, (character) => {
     const random = (Math.random() * 16) | 0;
     const value = character === 'x' ? random : (random & 0x3) | 0x8;
@@ -30,22 +28,17 @@ const createUuid = () => {
 
 const getOrCreateVisitorId = () => {
   const storedVisitorId = localStorage.getItem(VISITOR_ID_KEY);
-
   if (storedVisitorId) {
     return storedVisitorId;
   }
-
   const visitorId = createUuid();
   localStorage.setItem(VISITOR_ID_KEY, visitorId);
-
   return visitorId;
 };
 
 const logVisitor = async (page) => {
   const visitorId = getOrCreateVisitorId();
-
   try {
-    
     await fetch(`${API_URL}/api/visitor`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -63,6 +56,8 @@ const logVisitor = async (page) => {
 
 function App() {
   useEffect(() => {
+    initGA();
+    trackPageView(window.location.pathname);
     logVisitor(window.location.pathname);
   }, []);
 
