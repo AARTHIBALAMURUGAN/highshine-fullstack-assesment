@@ -1,0 +1,227 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+ 
+  --dark-navy: #0D0B2A;
+  --dark-purple: #1A1040;
+  --medium-purple: #2D1B69;
+  --accent-purple: #7B5CE5;
+  --light-purple: #9B7BFF;
+  --gold: #F5A623;
+  --gold-hover: #e09410;
+  --white: #FFFFFF;
+  --light-gray: #F8F8FF;
+  --text-muted: #A0A0B8;
+  --card-border: rgba(123, 92, 229, 0.2);
+
+  
+  --font-main: 'Inter', sans-serif;
+
+
+  --section-padding: 80px 0;
+  --container-width: 1200px;
+
+  --transition: all 0.3s ease;
+  --transition-slow: all 0.6s ease;
+
+ 
+  --shadow-card: 0 4px 24px rgba(123, 92, 229, 0.15);
+  --shadow-button: 0 4px 15px rgba(245, 166, 35, 0.4);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--dark-navy);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: var(--section-padding);
+}
+
+.section-light {
+  background-color: var(--light-gray);
+  color: #1a1a2e;
+}
+
+.section-dark {
+  background-color: var(--dark-navy);
+  color: var(--white);
+}
+
+.section-purple {
+  background-color: var(--dark-purple);
+  color: var(--white);
+}
+
+.section-tag {
+  display: inline-block;
+  background-color: var(--accent-purple);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.section-tag-outline {
+  display: inline-block;
+  border: 1px solid var(--accent-purple);
+  color: var(--accent-purple);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.section-title-dark {
+  color: #1a1a2e;
+}
+
+.gold-text {
+  color: var(--gold);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--gold);
+  color: #1a1a2e;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 32px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  box-shadow: var(--shadow-button);
+}
+
+.btn-gold:hover {
+  background-color: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 166, 35, 0.5);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 12px 28px;
+  border-radius: 50px;
+  border: 2px solid var(--gold);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-outline:hover {
+  background-color: var(--gold);
+  color: #1a1a2e;
+  transform: translateY(-2px);
+}
+
+.quote-block {
+  border-left: 3px solid var(--accent-purple);
+  padding: 16px 20px;
+  background: rgba(123, 92, 229, 0.1);
+  border-radius: 0 8px 8px 0;
+  margin-top: 24px;
+  font-style: italic;
+  color: var(--light-purple);
+  font-size: 1rem;
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-purple);
+  border-radius: 3px;
+}
+
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
