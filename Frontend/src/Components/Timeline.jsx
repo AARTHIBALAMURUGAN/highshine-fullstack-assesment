@@ -40,6 +40,9 @@ const milestones = [
 ];
 
 function TimelineItem({ item }) {
+  
+    const sectionRef=useRef(null);
+    useScrollReveal(sectionRef);
   return (
     <div className={`timeline-item ${item.current ? 'current' : ''}`}>
       <div className="timeline-tooltip">

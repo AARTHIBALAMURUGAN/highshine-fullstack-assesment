@@ -10,6 +10,7 @@ const stats = [
 ];
 
 function Hero() {
+  
   return (
     <section className="hero" id="home">
       <div className="hero-overlay"></div>

@@ -11,6 +11,9 @@ function Story(){
     return(
         <section className="story" id="story" ref={sectionRef}>
             <div className="story-inner">
+                <h2 className="story-title">
+                        Story of HighShine
+                    </h2>
                 <div className="story-images reveal-left">
                     <div className="story-img-wrapper">
                         <img
@@ -27,9 +30,7 @@ function Story(){
                     </div>
                 </div>
                 <div className="story-content reveal-right">
-                    <h2 className="story-title">
-                        Story of HighShine
-                    </h2>
+                    
                     <p className="story-text">
                        Our founder, Mr. Hari Gautham, is creating a community of experts
             dedicated to viewing each implementation as a lifelong commitment
