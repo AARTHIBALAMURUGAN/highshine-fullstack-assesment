@@ -254,3 +254,29 @@ and uses less than half their modules.*
 ║   Your ERP needs urgent attention       ║
 
 ╚═════════════════════════════════════════╝
+
+## Sample Result 2 — Ready to Start (84/100)
+
+*This visitor has 25 employees in
+manufacturing, uses Excel and Tally,
+needs ERP because business is growing,
+has one IT person, budget Rs 8 lakhs,
+wants to go live within 6 months.*
+╔═════════════════════════════════════════╗
+
+║     YOUR ERP READINESS SCORE            ║
+
+║                                         ║
+
+║              84 / 100                   ║
+
+║    ████████████████████░░               ║
+
+║                                         ║
+
+║         ✅  READY TO START              ║
+
+║   Your business is ERP ready            ║
+
+╚═════════════════════════════════════════╝
+Based on your answers we recommend
